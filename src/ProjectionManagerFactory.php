@@ -12,6 +12,7 @@ declare(strict_types=1);
 namespace Prooph\Bundle\EventStore;
 
 use PDO;
+use Doctrine\DBAL\Driver\PDO\Connection;
 use Prooph\Bundle\EventStore\Exception\RuntimeException;
 use Prooph\EventStore\EventStore;
 use Prooph\EventStore\EventStoreDecorator;
@@ -29,12 +30,12 @@ class ProjectionManagerFactory
 {
     public function createProjectionManager(
         EventStore $eventStore,
-        ?PDO $connection = null,
+        ?Connection $connection = null,
         string $eventStreamsTable = 'event_streams',
         string $projectionsTable = 'projections'
     ): ProjectionManager {
-        $checkConnection = function () use ($connection): PDO {
-            if (! $connection instanceof PDO) {
+        $checkConnection = function () use ($connection): Connection {
+            if (! $connection instanceof Connection) {
                 throw new RuntimeException('PDO connection missing');
             }
 
