@@ -50,6 +50,12 @@
       "ProophTest\\Bundle\\EventStore\\": "test"
     }
   },
+  "repositories": [
+      {
+      "type": "vcs",
+      "url": "https://github.com/Mattin/event-store.git"
+      }
+  ],
   "require": {
     "php": "^8.0",
     "ext-pdo": "*",
@@ -59,7 +65,7 @@
     "symfony/http-kernel": "^3.4 || ^4.4 || ^5.0 || ^6.0",
     "symfony/framework-bundle": "^3.4 || ^4.4 || ^5.0 || ^6.0",
     "symfony/messenger": "^4.2 || ^4.4 || ^5.0 || ^6.0",
-    "prooph/event-store": "^7.0"
+    "prooph/event-store": "dev-hotfix/php8.4-support"
   },
   "require-dev": {
     "prooph/pdo-event-store": "^1.12",
