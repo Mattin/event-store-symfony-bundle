@@ -17,7 +17,7 @@ class ProjectionStateCommand extends AbstractProjectionCommand
             ->setDescription('Shows the current projection state');
     }
 
-    protected function execute(InputInterface $input, OutputInterface $output)
+    protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $output->writeln('<action>Current state:</action>');
 

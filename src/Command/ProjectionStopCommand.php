@@ -17,7 +17,7 @@ class ProjectionStopCommand extends AbstractProjectionCommand
             ->setDescription('Stops a projection');
     }
 
-    protected function execute(InputInterface $input, OutputInterface $output)
+    protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $output->writeln(\sprintf('<action>Stopping projection <highlight>%s</highlight></action>', $this->projectionName));
         $this->projectionManager->stopProjection($this->projectionName);
