@@ -21,7 +21,7 @@ class ProjectionRunCommand extends AbstractProjectionCommand
             ->addOption(static::OPTION_RUN_ONCE, 'o', InputOption::VALUE_NONE, 'Loop the projection only once, then exit');
     }
 
-    protected function execute(InputInterface $input, OutputInterface $output)
+    protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $keepRunning = ! $input->getOption(static::OPTION_RUN_ONCE);
         $output->writeln(

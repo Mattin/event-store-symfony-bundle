@@ -18,7 +18,7 @@ class ProjectionStreamPositionsCommand extends AbstractProjectionCommand
             ->setDescription('Shows the current stream positions');
     }
 
-    protected function execute(InputInterface $input, OutputInterface $output)
+    protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $output->writeln('<action>All stream positions on this projection manager:</action>');
         $table = (new Table($output))->setHeaders(['Stream', 'Position']);
